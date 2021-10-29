@@ -15,7 +15,7 @@ export default function Navbar () {
             <Link to='/'>
               <img
                 className='h-8 w-auto sm:h-10'
-                src='/favicon.ico'
+                src='https://cdn.pixabay.com/photo/2020/04/29/07/54/coronavirus-5107715_1280.png'
                 alt='Covid icon'
               />
             </Link>
@@ -60,7 +60,7 @@ export default function Navbar () {
                   <Link to='/'>
                     <img
                       className='h-8 w-auto sm:h-10'
-                      src='/favicon.ico'
+                      src='https://cdn.pixabay.com/photo/2020/04/29/07/54/coronavirus-5107715_1280.png'
                       alt='Covid Icon'
                     />
                   </Link>
