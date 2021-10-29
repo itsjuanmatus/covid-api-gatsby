@@ -4,7 +4,7 @@ import Table from '../components/Table'
 
 import Navbar from '../components/Layout/Navbar'
 
-const IndexPage = ({ serverData }) => {
+const IndexPage = ({ serverData }: any) => {
   // Sort countries from api response
   const sortedCountries = serverData['response'].sort((a: any, b: any) =>
     a.continent > b.continent ? 1 : -1
