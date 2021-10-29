@@ -7,5 +7,5 @@ The site was deployed on Gatsby Cloud, *you can take a look* [here.](https://cov
 ## How to run it locally
 1. Clone the repo
 2. `npm install`
-3. `gastby develop`
+3. `gatsby develop` or `npm run develop`
 4. Done!
