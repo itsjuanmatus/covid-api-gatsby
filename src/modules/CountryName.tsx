@@ -36,9 +36,9 @@ export const CountryName: FC<Props> = ({ results = 'Africa' }) => {
         datasets: [
             {
                 data: [
-                    countries.deaths.total,
-                    countries.cases.total,
-                    countries.cases.recovered,
+                    countries && countries.deaths.total,
+                    countries && countries.cases.total,
+                    countries && countries.cases.recovered,
                 ],
                 backgroundColor: [
                     "rgba(255, 99, 132, 0.2)",
@@ -74,10 +74,12 @@ export const CountryName: FC<Props> = ({ results = 'Africa' }) => {
         },
     };
 
+
+
+    let lastUpdate
     // format date as yyyy/mm/dd HH:MM
-    let lastUpdate = countries.time.replace("T", " ");
-    lastUpdate = lastUpdate.slice(0, lastUpdate.length - 9);
-    console.log(countries)
+    if (countryList != undefined) lastUpdate = countries.time.replace("T", " ");
+    if (countryList != undefined) lastUpdate = lastUpdate.slice(0, lastUpdate.length - 9);
 
     return (
         <div className="bg-gray-100 min-h-screen w-full grid justify-items-center">
@@ -89,9 +91,9 @@ export const CountryName: FC<Props> = ({ results = 'Africa' }) => {
                     <h3 className="text-red-400 font-bold text-sm">
                         Your country result
                     </h3>
-                    <h1 className="text-6xl font-bold">{countries.country}</h1>
+                    <h1 className="text-6xl font-bold">{countries && countries.country}</h1>
                     <p className="text-gray-500 mt-4">
-                        Continent - {countries.continent}
+                        Continent - {countries && countries.continent}
                     </p>
                     <h3 className="font-semibold mt-5 text-gray-600">
                         Last Update - {lastUpdate}
@@ -102,14 +104,14 @@ export const CountryName: FC<Props> = ({ results = 'Africa' }) => {
                     <div className="bg-white shadow-sm border-1 border-gray-100 p-8 w-full max-w-4xl rounded-md">
                         <div>
                             <h2 className="text-5xl font-bold text-blue-800">
-                                {countries.cases.total}
+                                {countries && countries.cases.total}
                             </h2>
                             <p className="text-gray-500">Total Cases as of Today</p>
                             <div className="grid mt-5 gap-x-10">
                                 <div>
                                     <p className="text-gray-500">NEW CASES</p>
                                     <p className="text-gray-700 font-bold text-xl">
-                                        {countries.cases.new}
+                                        {countries && countries.cases.new}
                                     </p>
                                 </div>
                             </div>
@@ -125,7 +127,7 @@ export const CountryName: FC<Props> = ({ results = 'Africa' }) => {
                                 <div>
                                     <p className="text-gray-500">NEW DEATHS</p>
                                     <p className="text-gray-700 font-bold text-xl">
-                                        {countries.deaths.new}
+                                        {countries && countries.deaths.new}
                                     </p>
                                 </div>
                             </div>
@@ -134,14 +136,14 @@ export const CountryName: FC<Props> = ({ results = 'Africa' }) => {
                     <div className="bg-white shadow-sm border-1 border-gray-100 p-8 w-full max-w-4xl rounded-md">
                         <div>
                             <h2 className="text-5xl font-bold text-green-600">
-                                {countries.cases.recovered}
+                                {countries && countries.cases.recovered}
                             </h2>
                             <p className="text-gray-500">Recovered as of today</p>
                             <div className="grid grid-cols-2 mt-5 gap-x-10">
                                 <div>
                                     <p className="text-gray-500">CRITICAL</p>
                                     <p className="text-gray-700 font-bold text-xl">
-                                        {countries.cases.critical}
+                                        {countries && countries.cases.critical}
                                     </p>
                                 </div>
                             </div>
