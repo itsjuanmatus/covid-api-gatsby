@@ -58,9 +58,7 @@ const IndexPage = ({ serverData }) => {
     <>
       <Navbar />
       <div className='w-full m-auto min-h-screen bg-gray-100 flex justify-center overflow-x-hidden'>
-        <>
-          <title>COVID-19</title>
-        </>
+        <title>COVID-19</title>
         <div className='w-full flex-col px-2 md:px-0 justify-center max-w-max'>
           <h1 className='text-4xl font-bold mt-10'>COVID CASES</h1>
           <p className='mt-2 text-gray-500 mb-1 break-words'>
@@ -80,7 +78,7 @@ const IndexPage = ({ serverData }) => {
 
 export default IndexPage
 
-export async function getServerData () {
+export async function getServerData() {
   try {
     const res = await fetch('https://covid-193.p.rapidapi.com/statistics', {
       method: 'GET',

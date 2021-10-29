@@ -1,6 +1,7 @@
 import React, { useState, useEffect, FC } from "react"
 import { RouteComponentProps } from "@reach/router"
 import Dropdown from "../components/UI/Dropdown";
+import Navbar from '../components/Layout/Navbar';
 import { Bar } from "react-chartjs-2";
 
 type Props = RouteComponentProps<{
@@ -83,9 +84,8 @@ export const CountryName: FC<Props> = ({ results = 'Africa' }) => {
 
     return (
         <div className="bg-gray-100 min-h-screen w-full grid justify-items-center">
-            {/* <Head>
-        <title>{countries.country}</title>
-      </Head> */}
+            <Navbar />
+            <title>{countries && countries.country}</title>
             <div className="flex-col justify-items-center mb-10">
                 <div className="grid justify-items-center mt-10">
                     <h3 className="text-red-400 font-bold text-sm">
