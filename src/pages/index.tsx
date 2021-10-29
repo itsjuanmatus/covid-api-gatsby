@@ -9,7 +9,6 @@ const IndexPage = ({ serverData }) => {
   const sortedCountries = serverData['response'].sort((a: any, b: any) =>
     a.continent > b.continent ? 1 : -1
   )
-
   // Define column headers for the table
   const columns = React.useMemo(
     () => [
