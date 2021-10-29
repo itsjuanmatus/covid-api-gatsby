@@ -7,7 +7,7 @@ type Props = RouteComponentProps<{
     results: string
 }>
 
-export const CountryName: FC<Props> = ({ results = 1 }) => {
+export const CountryName: FC<Props> = ({ results = 'Africa' }) => {
 
     const [countryList, setCountryList] = useState<any>();
 
@@ -77,7 +77,7 @@ export const CountryName: FC<Props> = ({ results = 1 }) => {
     // format date as yyyy/mm/dd HH:MM
     let lastUpdate = countries.time.replace("T", " ");
     lastUpdate = lastUpdate.slice(0, lastUpdate.length - 9);
-
+    console.log(countries)
 
     return (
         <div className="bg-gray-100 min-h-screen w-full grid justify-items-center">
