@@ -10,7 +10,7 @@ export default function Navbar () {
   return (
     <Popover className='relative bg-white w-full'>
       <div className='mx-auto px-4 sm:px-6 w-full'>
-        <div className='flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10 w-full px-32'>
+        <div className='flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10 w-full md:px-32'>
           <div className='flex justify-start lg:w-0 lg:flex-1 cursor-pointer items-center '>
             <Link to='/'>
               <img
